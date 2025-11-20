@@ -6,7 +6,7 @@ from config import Settings
 from main import prepare_files
 from pydantic import BaseModel
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 import traceback
 from Artifacts.artifacts import run_script_data_process
 

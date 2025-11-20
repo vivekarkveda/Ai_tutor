@@ -7,11 +7,11 @@ from config import Settings
 from main import process_pipeline
 from logger import pipeline_logger
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 import traceback
 
 router = APIRouter(prefix="", tags=["Video Generation"])
-BASE_INPUT_ROOT = Path(r"C:\Vivek_Main\Manim_project\inputbox")
+BASE_INPUT_ROOT = Settings.TEMP_GENERATED_FOLDER
 
 class VideoRequest(BaseModel):
     path: Optional[str] = None

@@ -1,0 +1,44 @@
+[2025-11-18 16:52:57] [ERROR] ❌ Error generating files for 5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f: :x: File generation failed: one or more files could not be created.
+[2025-11-18 16:52:57] [ERROR] ❌ Error handling JSON input: ❌ Error generating files for 5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f: :x: File generation failed: one or more files could not be created.
+[2025-11-18 16:52:57] [ERROR] ❌ Error generating files
+Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\parsers\base_handler.py", line 117, in _generate_files
+    raise RuntimeError(":x: File generation failed: one or more files could not be created.")
+RuntimeError: :x: File generation failed: one or more files could not be created.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\parsers\base_handler.py", line 169, in handle
+    return self._generate_files(data, Path(json_file).stem, file_types)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\parsers\base_handler.py", line 138, in _generate_files
+    raise RuntimeError(err_msg)
+RuntimeError: ❌ Error generating files for 5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f: :x: File generation failed: one or more files could not be created.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\video_pipeline\routes\file_routes.py", line 32, in generate_files_endpoint
+    generated = prepare_files(Settings.RUN_FROM, True, Settings.FILE_TYPES, request.unique_id)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\main.py", line 33, in prepare_files
+    return handler.handle(Settings.JSON_FILE_PATH, file_types)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\parsers\base_handler.py", line 172, in handle
+    exception(
+TypeError: exception() got an unexpected keyword argument 'filegenration'
+[2025-11-18 16:53:02] [ERROR] ❌ Error generating code
+Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\video_pipeline\routes\generator_routes.py", line 25, in generate_code_endpoint
+    result = {"result_data" :generator.generate_code(request.input_data) ,"unique_id" :request.unique_id  }
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\LLM_Processor\codeGen_factory.py", line 132, in generate_code
+    final_prompt = merge_qdrant_snippets_into_prompt(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\LLM_Processor\codeGen_factory.py", line 78, in merge_qdrant_snippets_into_prompt
+    final_prompt += f"\n\n# Bug_fix Hint:\n```python\n{Bug_fix_snippet}\n```"
+                                                       ^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'Bug_fix_snippet' where it is not associated with a value
+[2025-11-18 16:53:02] [ERROR] ❌ HTTP 500: {"detail":"cannot access local variable 'Bug_fix_snippet' where it is not associated with a value"}
+[2025-11-18 16:53:02] [ERROR] ❌ HTTP 500: {"detail":"exception() got an unexpected keyword argument 'filegenration'"}

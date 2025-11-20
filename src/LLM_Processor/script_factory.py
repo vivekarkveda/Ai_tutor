@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from config import Settings
 from logger import pipeline_logger, validation_logger
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 from logger import pipeline_logger, validation_logger
 import traceback
 # === Abstract Base Product ===

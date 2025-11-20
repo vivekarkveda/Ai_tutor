@@ -5,7 +5,7 @@ import subprocess
 from config import Settings
 from logger import pipeline_logger, validation_logger
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 debugging = Settings.debugging 
 
 

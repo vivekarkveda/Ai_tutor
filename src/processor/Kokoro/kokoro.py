@@ -5,7 +5,7 @@ from io import BytesIO
 from pathlib import Path
 from kokoro import KPipeline
 from logger import pipeline_logger, validation_logger
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 
 
 class AudioFactory:

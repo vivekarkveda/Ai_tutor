@@ -13,7 +13,7 @@ from video_pipeline.utils import async_post, latest_input_folder, save_temp_json
 
 router = APIRouter()
 API_KEY = "ItjCVeX2H4je76T4Az0yQGnjISqZhD3IrKWj6ebq"
-BASE_INPUT_ROOT = Path(r"C:\Vivek_Main\Manim_project\inputbox")
+BASE_INPUT_ROOT = Settings.BASE_INPUT_ROOT
 
 # ================================================================
 # 1️⃣ /search — Generate Script + Trigger Rest

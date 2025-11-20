@@ -5,7 +5,7 @@ from pathlib import Path
 from video_pipeline.utils import async_post, latest_input_folder
 from logger import pipeline_logger, validation_logger
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 import traceback
 from config import Settings
 from Artifacts.artifacts import run_script_data_process

@@ -1,0 +1,9 @@
+[2025-11-18 16:52:56] [ERROR] ❌ Failed to write C:\ArkMalay\_Framework\video_data\20251118_165256_5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f\script_seq1\script_seq1.py: exceptions must derive from BaseException
+[2025-11-18 16:52:56] [ERROR] ❌ Failed to write C:\ArkMalay\_Framework\video_data\20251118_165256_5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f\script_seq1\script_seq1.txt: exceptions must derive from BaseException
+[2025-11-18 16:52:56] [ERROR] ❌ Failed to write C:\ArkMalay\_Framework\video_data\20251118_165256_5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f\script_seq2\script_seq2.py: exceptions must derive from BaseException
+[2025-11-18 16:52:56] [ERROR] ❌ Failed to write C:\ArkMalay\_Framework\video_data\20251118_165256_5dd34b4a-2a0f-43ec-8db9-390b9a9acf3f\script_seq2\script_seq2.txt: exceptions must derive from BaseException
+[2025-11-18 16:52:57] [ERROR] Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\parsers\base_handler.py", line 117, in _generate_files
+    raise RuntimeError(":x: File generation failed: one or more files could not be created.")
+RuntimeError: :x: File generation failed: one or more files could not be created.
+

@@ -6,7 +6,7 @@ from logger import pipeline_logger
 from config import Settings
 from pydantic import BaseModel
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 import traceback
 
 router = APIRouter(prefix="", tags=["Code Generation"])

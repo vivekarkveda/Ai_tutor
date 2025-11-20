@@ -1,10 +1,41 @@
 === FINAL PROMPT SENT ===
 
-
-
-# Reference Catalog Snippet:
-```python
-def construct(self):
+You are a specialist in producing high-quality educational animations using Manim v0.19.0 (Python).
+Your task is to generate a complete, runnable Manim Python animation script based on the provided structured input.
+Follow ALL instructions exactly — NO explanations, NO markdown, NO extra text.
+Return ONLY the final Python code that can run successfully with:
+    manim -pql <filename>.py <SceneName>
+====================
+OBJECTIVE
+====================
+copy the code from example if SCRIPT_SEQ is 1 then copy script 1
+if SCRIPT_SEQ is 2 then copy script 2
+====================
+EXAMPLE (REFERENCE)
+====================
+[script 1 :- from manim import *
+class ExpandingCircle(Scene):
+    def construct(self):
+        self.camera.background_color = "#1E1E1E"
+        circle = Circle(radius=0.5, color=YELLOW)
+        self.play(Create(circle), run_time=0.5)
+        self.play(circle.animate.scale(2).fade(1), run_time=1.2)
+        self.wait(0.3)
+script 2 :- from manim import *
+class MovingCircle(Scene):
+    def construct(self):
+        self.camera.background_color = "#1E1E1E"
+        path = Circle(radius=2, color=GRAY, stroke_opacity=0.3)
+        dot = Dot(color=RED).move_to(path.point_at_angle(0))
+        self.add(path, dot)
+        self.play(MoveAlongPath(dot, path), run_time=3, rate_func=linear)
+        self.wait(0.3)
+]
+If the topic and script content match this example, reproduce this exact code — line by line.
+====================
+:inbox_tray: STRUCTURED INPUT
+====================
+catalog_placeholder: def construct(self):
         # Balloon body
         balloon = Circle(radius=0.3, color="#FF0000", fill_opacity=0.8)
         
@@ -21,11 +52,7 @@ def construct(self):
         # Animate
         self.play(GrowFromCenter(balloon_group), run_time=1)
         self.wait(1)
-```
-
-# Bug_fix Hint:
-```python
-# Original Bug Snippet:
+Bug_fix_placeholder: # Original Bug Snippet:
 ```python
 # Radius line (before)
 radius_start = cylinder.get_zenith() + UP * (cylinder_height / 2)
@@ -124,29 +151,49 @@ self.play(
     run_time=2.0
 )
 ```
-```
+SCRIPT_SEQ: 2
+SCRIPT_FOR_MANIM: [
+  "Start with the highlighted circle from Scene 1.",
+  "Label the center of the circle as 'O'.",
+  "Draw a radius from the center to the edge of the circle and label it 'r'.",
+  "Animate a point moving along the circumference of the circle.",
+  "Draw a line from the center to the moving point, showing the constant radius.",
+  "Fade in the equation 'Circumference = 2\u03c0r' below the circle.",
+  "Zoom out to show the entire circle with labels and equation."
+]
+SCRIPT_VOICE_OVER: [
+  "Here\u2019s our circle, with its center labeled as 'O'.",
+  "The distance from the center to any point on the circle is called the radius, denoted as 'r'.",
+  "Notice how the radius remains constant as we move around the circle.",
+  "The total distance around the circle is its circumference, calculated as 2\u03c0 times the radius.",
+  "This equation is fundamental in understanding circles.",
+  "Let\u2019s review: center, radius, and circumference are key components of a circle."
+]
+SCRIPT_LENGTH: 30 seconds
+Previous Code (for continuity):
+from manim import *
+
+class ExpandingCircle(Scene):
+    def construct(self):
+        self.camera.background_color = "#1E1E1E"
+        circle = Circle(radius=0.5, color=YELLOW)
+        self.play(Create(circle), run_time=0.5)
+        self.play(circle.animate.scale(2).fade(1), run_time=1.2)
+        self.wait(0.3)
+====================
+:gear: OUTPUT REQUIREMENTS
+====================
+just copy the code provided in EXAMPLE (REFERENCE)
 
 === GENERATED CODE ===
 
-The provided code snippets demonstrate the creation of visual elements and animations using a Python library, likely Manim or a similar animation framework. The first snippet constructs a balloon with a string and animates its growth. The second set of snippets, labeled "Original Bug Snippet" and "Fixed Bug Snippet," seem to be related to a bug fix in the code for creating and animating a cylinder with top and bottom circles.
+from manim import *
 
-**Original Bug Snippet:**
-- The code calculates the start and end points for a radius line based on the cylinder's properties.
-- It creates a radius line between these points with a specific color and stroke width.
-- Two circles are created as the top and bottom caps of the cylinder with specified colors, opacity, and stroke settings.
-- The circles are rotated and shifted to their respective positions.
-- The animation separates the top and bottom circles by shifting them upwards and downwards, respectively.
-
-**Potential Bug:**
-- The original code might not handle cylinders with arbitrary orientations correctly. The rotation and positioning of the top and bottom circles assume a specific orientation, which may not work for cylinders with different orientations.
-
-**Fixed Bug Snippet:**
-- This snippet introduces a more robust approach to handle cylinders with different orientations.
-- It calculates the axis direction of the cylinder and normalizes it.
-- The top and bottom centers are determined based on the cylinder's center and height, with a slight offset to avoid precision issues.
-- The radius line is constructed in the plane perpendicular to the cylinder's axis, ensuring it remains horizontal regardless of the cylinder's orientation.
-- The `orient_disc_to_normal` function is defined to orient the top and bottom circles to match the cylinder's axis direction.
-- The circles are then positioned at the top and bottom centers and oriented accordingly.
-- The animation separates the circles along the cylinder's axis, ensuring proper movement regardless of orientation.
-
-In summary, the bug fix addresses the issue of handling cylinders with different orientations by introducing a more flexible and robust approach to positioning and animating the top and bottom circles. This ensures that the visualization remains accurate and consistent regardless of the cylinder's orientation in 3D space.
+class MovingCircle(Scene):
+    def construct(self):
+        self.camera.background_color = "#1E1E1E"
+        path = Circle(radius=2, color=GRAY, stroke_opacity=0.3)
+        dot = Dot(color=RED).move_to(path.point_at_angle(0))
+        self.add(path, dot)
+        self.play(MoveAlongPath(dot, path), run_time=3, rate_func=linear)
+        self.wait(0.3)

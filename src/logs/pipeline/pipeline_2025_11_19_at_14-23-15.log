@@ -1,0 +1,12 @@
+[2025-11-19 14:23:15] [ERROR] ❌ Drive authentication failed.
+Traceback (most recent call last):
+  File "C:\ArkMalay\_Framework\Ai_tutor\src\video_pipeline\drive_utils.py", line 189, in get_drive_service
+    creds = service_account.Credentials.from_service_account_file(service_account_path, scopes=SCOPES)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\.venv\Lib\site-packages\google\oauth2\service_account.py", line 264, in from_service_account_file
+    info, signer = _service_account_info.from_filename(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ArkMalay\_Framework\Ai_tutor\.venv\Lib\site-packages\google\auth\_service_account_info.py", line 78, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'fake.json'

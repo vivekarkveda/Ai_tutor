@@ -53,7 +53,7 @@ class ScriptDataHandler:
         # fallback to your actual final_prompt path
         if not os.path.exists(final_prompt_folder):
             print(":warning: final_prompt not inside manim_base. Switching to actual folder.")
-            final_prompt_folder = r"C:\Vivek_Main\feature_vivek\tutor\src\final_prompt"
+            final_prompt_folder = Settings.FINAL_PROMPT_FOLDER
             print(f":arrows_counterclockwise: Fallback path: {final_prompt_folder}")
         if not os.path.exists(final_prompt_folder):
             print(":x: Final prompt folder STILL missing. Returning empty.")
@@ -182,9 +182,9 @@ class ScriptDataHandler:
 # ---------------- Main Execution ----------------
 def run_script_data_process(unique_id):
     db_config = {
-        "dbname": "airlines_flights_data",
-        "user": "vivek",
-        "password": "8811",
+        "dbname": "a_v_data",
+        "user": "postgres",
+        "password": "malayraj11",
         "host": "localhost",
         "port": "5432"
     }

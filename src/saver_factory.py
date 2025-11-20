@@ -2,6 +2,8 @@ import os
 import psycopg2
 from pathlib import Path
 from logger import pipeline_logger
+from config import Settings
+from datetime import datetime
 
 
 class BaseSaver:
@@ -90,14 +92,14 @@ class SaverFactory:
     def save_all_script_media(video_bytes_list, audio_bytes_list, generated_files):
         """
         Saves each script step video/audio into fixed output paths:
-        Videos -> C:\Vivek_Main\tutter\src\output\Video
-        Audios -> C:\Vivek_Main\tutter\src\output\Audio
+        Videos -> \src\output\Video
+        Audios -> \src\output\Audio
         Naming: <parent_folder_name>_script_seq<seq>.mp4/.mp3
         Returns: (list_of_video_paths, list_of_audio_paths)
         """
 
-        videos_dir = Path(r"C:\Vivek_Main\tutter\src\output\Video")
-        audios_dir = Path(r"C:\Vivek_Main\tutter\src\output\Audio")
+        videos_dir = Settings.LOCAL_VID_DIR
+        audios_dir = Settings.LOCAL_AUDIO_DIR
         videos_dir.mkdir(parents=True, exist_ok=True)
         audios_dir.mkdir(parents=True, exist_ok=True)
 

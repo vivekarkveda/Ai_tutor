@@ -11,7 +11,7 @@ from table_gen import Table_gen
 from logger import pipeline_logger, validation_logger
 from Artifacts.artifacts import run_script_data_process
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception
+from Transaction.exception import exception
 import traceback
 from video_pipeline.drive_utils import upload_folder_to_drive
 from shutil import copy2

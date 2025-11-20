@@ -22,7 +22,7 @@ topicName = ""
 # ================================================================
 app = FastAPI(title="🎬 Video Processing Pipeline API")
 API_KEY = "dZfHrqzrU2lw32MX2RPRiG8ARSKqavpiqpLsU2b0"
-BASE_INPUT_ROOT = Path(r"C:\Vivek_Main\Manim_project\inputbox")
+BASE_INPUT_ROOT = Settings.BASE_INPUT_ROOT
 
 
 # ================================================================

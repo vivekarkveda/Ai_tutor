@@ -7,7 +7,7 @@ import psycopg2
 import traceback
 from logger import pipeline_logger, validation_logger
 from Transaction.transaction_handler import transaction
-from Transaction.excepetion import exception # ✅ fixed spelling ("exception", not "excepetion")
+from Transaction.exception import exception 
 from config import Settings
 
 
@@ -67,7 +67,7 @@ class InputHandler(ABC):
 
                     # Save file safely
                     try:
-                        raise TypeError("Simulated file write error") if script_voice_over == "trigger_error" else None
+                        # raise TypeError("Simulated file write error") if script_voice_over == "trigger_error" else None
 
                         if isinstance(content, (dict, list)):
                             file_path.write_text(
